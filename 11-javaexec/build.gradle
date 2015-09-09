@@ -1,0 +1,8 @@
+task runJar {
+    javaexec {
+        main = "-jar";
+        args 'jar/test.jar'
+        args 'arg1'
+        args 'arg2'
+    }
+}

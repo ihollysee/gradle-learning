@@ -1,0 +1,14 @@
+defaultTasks "defaultTask"
+
+task helloWorld << {
+    println "Hello World!"
+}
+
+task copyFile(type: Copy) {
+    from 'xml'
+    into 'destination'
+}
+
+task defaultTask << {
+    println "i am default task!"
+}
