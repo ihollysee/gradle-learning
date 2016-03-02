@@ -15,12 +15,36 @@ dependencies {
     myDependency 'org.apache.commons:commons-lang3:3.0'
 }
 
-
+//支持很多种仓库，如maven、ivy，通过文件访问或者通过HTTP 访问
+//一个工程可以使用多个仓库，怎么寻找dependency呢？
+//Gradle是这么做的：按照你在文件中(build.gradle)仓库的顺序寻找所需依赖(如jar文件)，如果在某个仓库中找到了，那么将不再其它仓库中寻找。
 repositories {
+
+    //使用本地maven 仓库
     mavenCentral()
+
+//使用远程maven 仓库
+//    maven {
+//        url "http://repo.mycompany.com/maven2"
+//    }
+
+    //使用本地的ivy 仓库
+//    repositories {
+//        ivy {
+//            // URL can refer to a local directory
+//            url "../local-repo"
+//        }
+//    }
+
+    //使用远程的ivy 仓库
+//    repositories {
+//        ivy {
+//            url "http://repo.mycompany.com/repo"
+//        }
+//    }
 }
 
-dependencies {
+dependencies {//通过group、name和version 组织起来
     testCompile 'junit:junit:4.8.2'
     testCompile 'easymock:easymock:2.0'
     compile 'org.slf4j:slf4j-log4j12:1.7.2'

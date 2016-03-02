@@ -1,0 +1,5 @@
+task fileOpration {
+    def configFile = new File('1.txt')
+    configFile.withOutputStream { os ->
+        os << "xxxx"
+    }}
